@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta name="keywords" content="私募排排网,玖富证券,证券开户,港股股票开户,开户手续费,私募基金">
+    <meta name="description" content="私募排排网联合玖富证券为证券投资者送上多项大礼,观看排排网线上私募路演就可获得抽取大奖机会,奖品包括天猫精灵、港股永久免佣账户、话费、投资策略报告等,买私募、看路演,就上私募排排网">
+    <title>看私募路演，赢永久免佣证券账户</title>
+    <script src="/Public/Js/Mobile2/jquery.min.js"></script>
+    <script src="//<{:MAIN_HOST_NAME}><{:U('global/common',array('t'=>time(),'force_login'=>$forceLogin))}>" charset="UTF-8"></script>
+    <script type="text/javascript" src="<{:PASSPORT_HOST_URL}>Static/Passport/Js/smppw_auth_mc.js?v=1.5.1&force_auth=<{$articleForceAuth|default=0}>"></script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but loadshow-pc doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script src="<{:ANALYSIS_HOST_URL}>Public/Js/Analysis/stat.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var product_name = '<{$fund_short_name}>' != '' ? '<{$fund_short_name}>' : null;
+    if(typeof(sensors)!='undefined'){
+        var cname_1 = typeof(GLB_SENSORS_CNAME_1)!='undefined' ? GLB_SENSORS_CNAME_1 : '';
+        var cname_2 = typeof(GLB_SENSORS_CNAME_2)!='undefined' ? GLB_SENSORS_CNAME_2 : '';
+        var product_name = product_name ? product_name : null;
+        var dataObj = {
+            cname_1: cname_1,
+            cname_2: cname_2
+        };
+       /* if(product_name){
+            dataObj.product_name = product_name;                                                                                                      
+        }*/
+        sensors.submit('autoTrack', dataObj);
+    }
+</script> 
+
+</html>
